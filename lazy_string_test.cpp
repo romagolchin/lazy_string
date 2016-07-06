@@ -5,6 +5,7 @@ int main(int argc, char const *argv[]) {
 	string str = "abacaba";
 	string astr = "e";
 	lazy_string s(str);
+	s.out();
 	lazy_string t(astr);
 	// printf("%p\n", t.get_s());
 	t = s;
@@ -13,13 +14,25 @@ int main(int argc, char const *argv[]) {
 	// 	printf("%c", (char) t[i]);
 	// printf("\n");
 
-	cout << t[1] << endl;
-	printf("%p %p\n", t.get_s(), s.get_s());
+	// cout << t[1] << endl;
+	// printf("%p %p\n", t.get_s(), s.get_s());
 	t[3] = 'd';
-	printf("%p %p\n", t.get_s(), s.get_s());
+	// printf("%p %p\n", t.get_s(), s.get_s());
 	// (t.substr(1, 4)).out();
+
+	// try {
+	// 	lazy_string r(t.substr(1, 4));
+	// }
+	// catch (const length_error le) {
+	// 	cerr << le.what() << endl;
+	// }
+	cerr << "Expected" << endl;
 	(lazy_string(t.get_s() + 1, 4, 1, &t)).out();
-	// lazy_string r (t.substr(1, 4));
+	cerr << "Reality" << endl;
+	// lazy_string r = t;
+	// const lazy_string& ref = t.substr(1, 4);
+	// lazy_string r (ref);
+	/*lazy_string r = */t.substr(1, 4);
 	// r.out();
 
 	// printf("%p %p\n", t.get_s(), r.get_s());
