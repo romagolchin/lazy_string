@@ -7,8 +7,9 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
+	//const reference is nonsense
 	 int a = 5;
-	const int& ref = a;
+	const int& ref = a; //reference to const
 	// a = 4;
 	printf("%d\n", a);
 	printf("%p\n", &ref);

@@ -6,6 +6,7 @@ int main(int argc, char const *argv[]) {
 	string astr = "e";
 	lazy_string s(str);
 	s.out();
+	s[4] = 'o';
 	lazy_string t(astr);
 	// printf("%p\n", t.get_s());
 	t = s;
@@ -27,19 +28,21 @@ int main(int argc, char const *argv[]) {
 	// 	cerr << le.what() << endl;
 	// }
 	cerr << "Expected" << endl;
-	(lazy_string(t.get_s() + 1, 4, 1, &t)).out();
+	(lazy_string(t.get_s() + 1, 4, 1)).out();
 	cerr << "Reality" << endl;
 	// lazy_string r = t;
 	// const lazy_string& ref = t.substr(1, 4);
 	// lazy_string r (ref);
-	/*lazy_string r = */t.substr(1, 4);
-	// r.out();
-
+	lazy_string r = t.substr(1, 4);
+	r.out();
+	cerr << (string) r;// << ' ' << s << ' ' << t <<  endl;
 	// printf("%p %p\n", t.get_s(), r.get_s());
 	// printf("%c\n", (char) t[2]);
 	// printf("%c\n", (char) t[3]);
 	// printf("%d\n", (int) t.size());
-
+	lazy_string as("");
+	cin >> as;
+	cout << as;
 	// string my_str = (string) r;
 	// cout << my_str << endl;
 	// r.out();
